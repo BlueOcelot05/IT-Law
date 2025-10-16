@@ -77,3 +77,55 @@ h1 { font-size: var(--fs-h1); margin:0 0 var(--space-2) }
 .footer-col small, .footer-col p { color: var(--muted); }
 /* Responsive */
 @media (max-width: 520px) { .search input { width: 140px; } }
+
+/* ===== Document styling (Privacy / Terms) ===== */
+.doc { max-width: 860px; margin: 0 auto; padding: 40px 0 80px; }
+.doc-hero {
+  margin: 12px 0 24px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.05));
+  box-shadow: var(--shadow-1);
+}
+.doc h1 { font-size: 18pt; margin: 0 0 8px; }
+.doc .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; font-size: 10pt; }
+
+.section { margin: 28px 0; padding: 0; }
+.section h2 { font-size: 13.5pt; margin: 0 0 10px; }
+.section p { margin: 8px 0 12px; color: var(--text); }
+.section small { color: var(--muted); }
+
+.callout {
+  border: 1px dashed var(--line);
+  background: linear-gradient(180deg, rgba(233,226,74,.08), transparent 80%);
+  border-radius: 14px; padding: 14px 16px; margin: 14px 0;
+}
+.callout strong { color: var(--text); }
+
+.list-check { list-style: none; margin: 8px 0 8px 0; padding: 0; }
+.list-check li {
+  position: relative; padding-left: 28px; margin: 8px 0; line-height: 1.5;
+}
+.list-check li::before {
+  content: "✔"; position: absolute; left: 0; top: 0; transform: translateY(2px);
+  background: var(--primary); color: var(--primary-ink); width: 18px; height: 18px;
+  border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 900;
+}
+
+.kbd { font: 600 10pt/1 var(--font-body); padding: 3px 6px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 8px; }
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--glass); color: var(--muted);
+}
+
+.contact-box {
+  margin: 16px 0; padding: 14px 16px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--glass);
+}
+.contact-box a.btn { margin-top: 8px; }
+
+.hr { height: 1px; background: var(--line); margin: 24px 0; opacity: .7; }
+.back { margin-top: 26px; display: inline-flex; }
