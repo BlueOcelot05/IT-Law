@@ -67,7 +67,6 @@
 
   if (q) {
     q.addEventListener("input", applyFilter);
-    // Cmd/Ctrl+K focus
     document.addEventListener("keydown", (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault(); q.focus();
