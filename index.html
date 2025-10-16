@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
-  <link rel="stylesheet" href="./assets/styles.css?v=9" />
+  <link rel="stylesheet" href="./assets/styles.css?v=10" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 </head>
 <body>
@@ -24,8 +24,6 @@
         <a href="./privacy.html">Privacy</a>
         <a href="./terms.html">Terms</a>
         <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme">🌓</button>
-
-        <!-- Global consent toggle (loads all embeds automatically when enabled) -->
         <label class="consent-toggle" title="Always load YouTube embeds on this site">
           <input id="ytGlobalConsent" type="checkbox" />
           <span>Always load YouTube</span>
@@ -38,7 +36,7 @@
   <section class="hero">
     <div class="container hero-inner">
       <h1>Fresh street-food videos, zero re-uploads.</h1>
-      <p>We curate the best clips from YouTube and only load the player after you consent. Scroll, click, enjoy. 🍜</p>
+      <p>We embed directly from YouTube and only load the player after consent. Scroll, click, enjoy. 🍜</p>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="#feed">Explore videos</a>
@@ -46,7 +44,6 @@
       </div>
     </div>
 
-    <!-- Background ornaments -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
   </section>
@@ -61,6 +58,7 @@
         <button class="chip" data-filter="americas">Americas</button>
         <button class="chip" data-filter="dessert">Dessert</button>
         <button class="chip" data-filter="bbq">BBQ</button>
+        <button class="chip" data-filter="romania">Romania</button>
       </div>
       <label class="search">
         <input id="q" type="search" placeholder="Search descriptions…" aria-label="Search" />
@@ -69,7 +67,7 @@
     </div>
 
     <section class="grid">
-      <!-- CARD 1 -->
+      <!-- Core curated cards (examples from reputable channels) -->
       <article class="card" data-tags="asia bbq">
         <header class="card-head">
           <h2>Why This Japanese Chef’s Okonomiyaki Sells Out — and How to Make It</h2>
@@ -77,11 +75,7 @@
           <span class="tag">BBQ</span>
         </header>
         <p class="card-desc">Okonomiyaki griddled street-side; crispy edges, savory batter, and the technique behind it.</p>
-
-        <div class="yt-consent"
-             data-video-id="k2dlJQwZYQ0"
-             data-title="Watch on YouTube"
-             data-privacy="true">
+        <div class="yt-consent" data-video-id="k2dlJQwZYQ0" data-title="Watch on YouTube" data-privacy="true">
           <div class="yt-consent-inner">
             <p>To protect your privacy, the YouTube player loads only after you click.</p>
             <button class="yt-load-btn" type="button">Load video (consent)</button>
@@ -90,7 +84,6 @@
         </div>
       </article>
 
-      <!-- CARD 2 -->
       <article class="card" data-tags="europe dessert">
         <header class="card-head">
           <h2>The Only Truly Original Pastéis de Nata — Pastéis de Belém</h2>
@@ -98,11 +91,7 @@
           <span class="tag">Dessert</span>
         </header>
         <p class="card-desc">Inside Lisbon’s iconic bakery where the custard tarts are still made to a secret recipe.</p>
-
-        <div class="yt-consent"
-             data-video-id="W3hM7nREWJw"
-             data-title="Watch on YouTube"
-             data-privacy="true">
+        <div class="yt-consent" data-video-id="W3hM7nREWJw" data-title="Watch on YouTube" data-privacy="true">
           <div class="yt-consent-inner">
             <p>To protect your privacy, the YouTube player loads only after you click.</p>
             <button class="yt-load-btn" type="button">Load video (consent)</button>
@@ -111,7 +100,6 @@
         </div>
       </article>
 
-      <!-- CARD 3 -->
       <article class="card" data-tags="americas bbq">
         <header class="card-head">
           <h2>All the Tacos: Al Pastor in Mexico City</h2>
@@ -119,15 +107,54 @@
           <span class="tag">BBQ</span>
         </header>
         <p class="card-desc">From trompo to taco — carving, salsas, and the city’s late-night pastor spots.</p>
-
-        <div class="yt-consent"
-             data-video-id="GAKp-QOa7fo"
-             data-title="Watch on YouTube"
-             data-privacy="true">
+        <div class="yt-consent" data-video-id="GAKp-QOa7fo" data-title="Watch on YouTube" data-privacy="true">
           <div class="yt-consent-inner">
             <p>To protect your privacy, the YouTube player loads only after you click.</p>
             <button class="yt-load-btn" type="button">Load video (consent)</button>
             <small>By clicking, you load content from YouTube (Google). See <a href="./privacy.html">Privacy</a>.</small>
+          </div>
+        </div>
+      </article>
+
+      <!-- Îmi place să mănânc — three real videos, taggable as Romania -->
+      <article class="card" data-tags="romania europe">
+        <header class="card-head">
+          <h2>CEA MAI BUNĂ PIZZA DIN ORAȘ? (CLUJ)</h2>
+        </header>
+        <p class="card-desc">Test de pizza în Cluj, cu mai multe localuri comparate.</p>
+        <div class="yt-consent" data-video-id="lO8Z9QMOOHs" data-title="Îmi place să mănânc — Pizza Cluj" data-privacy="true">
+          <div class="yt-consent-inner">
+            <p>Playerul YouTube se încarcă doar după consimțământ.</p>
+            <button class="yt-load-btn" type="button">Load video (consent)</button>
+            <small>Prin click încarci conținut YouTube (Google). Vezi <a href="./privacy.html">Privacy</a>.</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-tags="romania europe">
+        <header class="card-head">
+          <h2>CEA MAI BUNĂ SHAORMĂ DIN IAȘI?</h2>
+        </header>
+        <p class="card-desc">Compară mai multe shaormerii din Iași — Class, Kiwans, Dania ș.a.</p>
+        <div class="yt-consent" data-video-id="Hh2p6RM9_9s" data-title="Îmi place să mănânc — Shaorma Iași" data-privacy="true">
+          <div class="yt-consent-inner">
+            <p>Playerul YouTube se încarcă doar după consimțământ.</p>
+            <button class="yt-load-btn" type="button">Load video (consent)</button>
+            <small>Prin click încarci conținut YouTube (Google). Vezi <a href="./privacy.html">Privacy</a>.</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-tags="romania europe">
+        <header class="card-head">
+          <h2>AU APĂRUT PROBLEMELE: MAI DESCHIDEM SHAORMERIA?</h2>
+        </header>
+        <p class="card-desc">Episod despre dificultățile deschiderii unei shaormerii și prima shaorma făcută.</p>
+        <div class="yt-consent" data-video-id="S_Di2q0VBIY" data-title="Îmi place să mănânc — Shaormerie" data-privacy="true">
+          <div class="yt-consent-inner">
+            <p>Playerul YouTube se încarcă doar după consimțământ.</p>
+            <button class="yt-load-btn" type="button">Load video (consent)</button>
+            <small>Prin click încarci conținut YouTube (Google). Vezi <a href="./privacy.html">Privacy</a>.</small>
           </div>
         </div>
       </article>
