@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Street-Food Tube – Curated YouTube Embeds</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Street-Food Tube</h1>
+    <nav>
+      <a href="./privacy.html">Privacy</a> ·
+      <a href="./terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <p class="intro">
+      Curated street-food videos from YouTube. We embed only via the official YouTube player
+      and load videos <em>after</em> you consent.
+    </p>
+
+    <!-- Video card -->
+    <article class="card">
+      <h2>Tokyo Okonomiyaki – Street Stall</h2>
+      <p>Short clip of okonomiyaki prep at a popular street stall in Tokyo.</p>
+
+      <!-- Consent placeholder: replace the data-video-id with any YouTube ID -->
+      <div class="yt-consent"
+           data-video-id="dQw4w9WgXcQ"
+           data-title="Watch on YouTube"
+           data-privacy="true">
+        <div class="yt-consent-inner">
+          <p>To protect your privacy, this video is hosted on YouTube. Click to load the YouTube player.</p>
+          <button class="yt-load-btn" type="button">Load video (consent)</button>
+          <small>
+            By clicking, you agree to load content from YouTube (Google). See our
+            <a href="./privacy.html">Privacy</a>.
+          </small>
+        </div>
+      </div>
+    </article>
+
+    <!-- Add more <article> blocks like the one above for more videos -->
+  </main>
+
+  <footer class="wrap">
+    <small>© 2025 Street-Food Tube. Videos © their respective rights holders on YouTube.</small>
+  </footer>
+
+  <script src="assets/yt-consent.js" defer></script>
+</body>
+</html>
