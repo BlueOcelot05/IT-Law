@@ -6,8 +6,8 @@
   --shadow-2: 0 4px 14px rgba(0,0,0,.25);
   --space-1: 8px; --space-2: 12px; --space-3: 16px; --space-4: 24px; --space-5: 36px;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
-  --fs-body: 12pt;   /* your preference */
-  --fs-h1: 14pt;     /* your preference */
+  --fs-body: 12pt;   /* body size */
+  --fs-h1: 14pt;     /* heading sizes */
   --fs-h2: 13pt;
 
   /* Dark */
@@ -71,6 +71,10 @@ a.btn, a.btn:link, a.btn:visited { text-decoration: none !important; }
 .brand-badge { background: var(--primary); color: var(--primary-ink); padding: 6px 10px; border-radius: 10px; font-weight: 800; letter-spacing: .5px; }
 .brand-text { letter-spacing:.2px }
 .nav { display:flex; align-items:center; gap: 12px; }
+
+/* Consent toggle */
+.consent-toggle { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid var(--line); border-radius:999px; user-select:none; }
+.consent-toggle input { accent-color: var(--primary); }
 
 /* ===== Hero ===== */
 .hero { position: relative; padding: var(--space-5) 0 var(--space-5); background: linear-gradient(180deg, transparent, rgba(0,0,0,.10) 40%, transparent); }

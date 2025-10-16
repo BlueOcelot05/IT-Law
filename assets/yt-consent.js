@@ -1,14 +1,17 @@
 (function () {
   /* ---------- Consent-gated YouTube embeds ---------- */
-  function mkIframe(videoId, privacy) {
+  function mkIframe(videoId, privacy, titleText) {
     const host = privacy ? "https://www.youtube-nocookie.com" : "https://www.youtube.com";
     const url = `${host}/embed/${encodeURIComponent(videoId)}?rel=0&modestbranding=1`;
     const iframe = document.createElement("iframe");
     iframe.className = "yt-iframe";
+    iframe.src = url;
+    iframe.loading = "lazy";                 // performance
+    iframe.title = titleText || "YouTube video";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.setAttribute("allow",
       "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
     iframe.setAttribute("allowfullscreen", "");
-    iframe.src = url;
     return iframe;
   }
 
@@ -18,7 +21,8 @@
     btn.addEventListener("click", () => {
       const vid = el.dataset.videoId;
       const privacy = el.dataset.privacy === "true";
-      el.replaceChildren(mkIframe(vid, privacy));
+      const titleText = el.closest(".card")?.querySelector("h2")?.textContent?.trim();
+      el.replaceChildren(mkIframe(vid, privacy, titleText));
     });
   }
 
@@ -71,6 +75,28 @@
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault(); q.focus();
       }
+    });
+  }
+
+  /* ---------- Global consent toggle (load all embeds) ---------- */
+  const box = document.getElementById("ytGlobalConsent");
+  const KEY = "ytbConsentAll";
+  function loadAllEmbeds() {
+    document.querySelectorAll(".yt-consent").forEach(el => {
+      if (el.firstElementChild?.classList?.contains("yt-iframe")) return; // already loaded
+      const vid = el.dataset.videoId;
+      const privacy = el.dataset.privacy === "true";
+      const titleText = el.closest(".card")?.querySelector("h2")?.textContent?.trim();
+      el.replaceChildren(mkIframe(vid, privacy, titleText));
+    });
+  }
+  if (box) {
+    const savedAll = localStorage.getItem(KEY) === "1";
+    box.checked = savedAll;
+    if (savedAll) loadAllEmbeds();
+    box.addEventListener("change", () => {
+      localStorage.setItem(KEY, box.checked ? "1" : "0");
+      if (box.checked) loadAllEmbeds();
     });
   }
 
