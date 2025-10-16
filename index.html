@@ -1,52 +1,145 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Street-Food Tube – Curated YouTube Embeds</title>
+  <title>Street-Food Tube — Curated YouTube Embeds</title>
+  <meta name="description" content="Curated street-food videos from YouTube with privacy-friendly, consent-gated embeds." />
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
-  <header class="wrap">
-    <h1>Street-Food Tube</h1>
-    <nav>
-      <a href="./privacy.html">Privacy</a> ·
-      <a href="./terms.html">Terms</a>
-    </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <span class="brand-badge">SFT</span>
+        <span class="brand-text">Street-Food Tube</span>
+      </a>
+
+      <nav class="nav">
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme">🌓</button>
+      </nav>
+    </div>
   </header>
 
-  <main class="wrap">
-    <p class="intro">
-      Curated street-food videos from YouTube. We embed only via the official YouTube player
-      and load videos <em>after</em> you consent.
-    </p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Fresh street-food videos, zero re-uploads.</h1>
+      <p>We curate the best clips from YouTube and only load the player after you consent. Scroll, click, enjoy. 🍜</p>
 
-    <!-- Video card -->
-    <article class="card">
-      <h2>Tokyo Okonomiyaki – Street Stall</h2>
-      <p>Short clip of okonomiyaki prep at a popular street stall in Tokyo.</p>
-
-      <!-- Consent placeholder: replace the data-video-id with any YouTube ID -->
-      <div class="yt-consent"
-           data-video-id="dQw4w9WgXcQ"
-           data-title="Watch on YouTube"
-           data-privacy="true">
-        <div class="yt-consent-inner">
-          <p>To protect your privacy, this video is hosted on YouTube. Click to load the YouTube player.</p>
-          <button class="yt-load-btn" type="button">Load video (consent)</button>
-          <small>
-            By clicking, you agree to load content from YouTube (Google). See our
-            <a href="./privacy.html">Privacy</a>.
-          </small>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#feed">Explore videos</a>
+        <a class="btn btn-outline" href="./privacy.html">How we protect your privacy</a>
       </div>
-    </article>
+    </div>
 
-    <!-- Add more <article> blocks like the one above for more videos -->
+    <!-- Background ornaments -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </section>
+
+  <!-- Feed -->
+  <main id="feed" class="container">
+    <div class="toolbar">
+      <div class="chips">
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="asia">Asia</button>
+        <button class="chip" data-filter="europe">Europe</button>
+        <button class="chip" data-filter="americas">Americas</button>
+        <button class="chip" data-filter="dessert">Dessert</button>
+        <button class="chip" data-filter="bbq">BBQ</button>
+      </div>
+      <label class="search">
+        <input id="q" type="search" placeholder="Search descriptions…" aria-label="Search" />
+        <span>⌘/Ctrl + K</span>
+      </label>
+    </div>
+
+    <section class="grid">
+      <!-- CARD 1 -->
+      <article class="card" data-tags="asia bbq">
+        <header class="card-head">
+          <h2>Tokyo Okonomiyaki — Street Stall</h2>
+          <span class="tag">Asia</span>
+          <span class="tag">BBQ</span>
+        </header>
+        <p class="card-desc">Short clip of okonomiyaki prep at a popular street stall in Tokyo.</p>
+
+        <div class="yt-consent"
+             data-video-id="dQw4w9WgXcQ"
+             data-title="Watch on YouTube"
+             data-privacy="true">
+          <div class="yt-consent-inner">
+            <p>To protect your privacy, the YouTube player loads only after you click.</p>
+            <button class="yt-load-btn" type="button">Load video (consent)</button>
+            <small>By clicking, you load content from YouTube (Google). See <a href="./privacy.html">Privacy</a>.</small>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card" data-tags="europe dessert">
+        <header class="card-head">
+          <h2>Lisbon Pastéis de Nata — Bakery Window</h2>
+          <span class="tag">Europe</span>
+          <span class="tag">Dessert</span>
+        </header>
+        <p class="card-desc">Flaky custard tarts being torched to caramel perfection.</p>
+
+        <div class="yt-consent"
+             data-video-id="5NV6Rdv1a3I"
+             data-title="Watch on YouTube"
+             data-privacy="true">
+          <div class="yt-consent-inner">
+            <p>To protect your privacy, the YouTube player loads only after you click.</p>
+            <button class="yt-load-btn" type="button">Load video (consent)</button>
+            <small>By clicking, you load content from YouTube (Google). See <a href="./privacy.html">Privacy</a>.</small>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card" data-tags="americas bbq">
+        <header class="card-head">
+          <h2>Mexico City Tacos al Pastor — Trompo</h2>
+          <span class="tag">Americas</span>
+          <span class="tag">BBQ</span>
+        </header>
+        <p class="card-desc">Carved straight off the spit, with pineapple and cilantro.</p>
+
+        <div class="yt-consent"
+             data-video-id="oHg5SJYRHA0"
+             data-title="Watch on YouTube"
+             data-privacy="true">
+          <div class="yt-consent-inner">
+            <p>To protect your privacy, the YouTube player loads only after you click.</p>
+            <button class="yt-load-btn" type="button">Load video (consent)</button>
+            <small>By clicking, you load content from YouTube (Google). See <a href="./privacy.html">Privacy</a>.</small>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
 
-  <footer class="wrap">
-    <small>© 2025 Street-Food Tube. Videos © their respective rights holders on YouTube.</small>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <strong>Street-Food Tube</strong>
+        <p>Curated embeds via the official YouTube player. No re-uploads.</p>
+      </div>
+      <div class="footer-col">
+        <a href="./privacy.html">Privacy</a><br/>
+        <a href="./terms.html">Terms</a>
+      </div>
+      <div class="footer-col">
+        <small>© 2025 Street-Food Tube. Videos © their respective rights holders on YouTube.</small>
+      </div>
+    </div>
   </footer>
 
   <script src="assets/yt-consent.js" defer></script>
